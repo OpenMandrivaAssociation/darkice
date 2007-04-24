@@ -43,9 +43,6 @@ AAC encoding.
 %prep
 %setup -q 
 %build
-# fix lib detection
-# beware, using ./ before configure will trigger a rpmlint error :) 
-perl -pi -e  's|(\$\{\S*PREFIX\}/lib)| $1 ${1}64|' configure    
 
 %configure
 make all
