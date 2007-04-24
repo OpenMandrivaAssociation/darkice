@@ -13,13 +13,11 @@
 
 Summary : DarkIce live IceCast / ShoutCast streamer
 Name: darkice
-Version: 0.17.1
+Version: 0.18
 Release: %mkrel 1
 License: GPL
 Group: Sound
 Source: %{name}-%{version}.tar.bz2
-#Patch0:  darkice-0.16-fix-compile-faac.patch.bz2
-Patch1:  darkice-0.16-fix-lame_x86_64.patch.bz2
 URL: http://%{name}.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: libalsa-devel libogg-devel libvorbis-devel
@@ -44,8 +42,6 @@ AAC encoding.
 
 %prep
 %setup -q 
-#%patch -p0
-%patch1 -p0
 %build
 # fix lib detection
 # beware, using ./ before configure will trigger a rpmlint error :) 
