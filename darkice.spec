@@ -4,6 +4,7 @@
 
 %define build_plf 0
 
+%define rel 1
 
 %{?_with_plf: %{expand: %%global build_plf 1}}
 %if %build_plf
@@ -13,8 +14,8 @@
 
 Summary : DarkIce live IceCast / ShoutCast streamer
 Name: darkice
-Version: 0.18
-Release: %mkrel 1
+Version: 0.18.1
+Release: %mkrel %rel
 License: GPL
 Group: Sound
 Source: %{name}-%{version}.tar.bz2
