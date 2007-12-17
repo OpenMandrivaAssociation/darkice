@@ -20,7 +20,6 @@ License: GPL
 Group: Sound
 Source: %{name}-%{version}.tar.bz2
 URL: http://%{name}.sourceforge.net/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: libalsa-devel libogg-devel libvorbis-devel
 BuildRequires: libjack-devel 
 %if %build_plf
