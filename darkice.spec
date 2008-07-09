@@ -14,12 +14,13 @@
 
 Summary : DarkIce live IceCast / ShoutCast streamer
 Name: darkice
-Version: 0.18.1
+Version: 0.19
 Release: %mkrel %rel
 License: GPL
 Group: Sound
-Source: %{name}-%{version}.tar.bz2
-URL: http://%{name}.sourceforge.net/
+Source: http://darkice.tyrell.hu/dist/%{version}/%{name}-%{version}.tar.gz
+Patch: darkice-0.19-fix-missing-limits_h.diff
+URL: http://darkice.tyrell.hu 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: libalsa-devel libogg-devel libvorbis-devel
 BuildRequires: libjack-devel 
@@ -43,6 +44,8 @@ AAC encoding.
 
 %prep
 %setup -q 
+%patch -p0
+
 %build
 
 %configure
