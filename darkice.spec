@@ -4,7 +4,7 @@
 
 %define build_plf 0
 
-%define rel 2
+%define rel 1
 
 %{?_with_plf: %{expand: %%global build_plf 1}}
 %if %build_plf
@@ -14,13 +14,13 @@
 
 Summary : DarkIce live IceCast / ShoutCast streamer
 Name: darkice
-Version: 0.19
+Version: 0.20.1
 Release: %mkrel %rel
 License: GPL
 Group: Sound
-Source: http://darkice.tyrell.hu/dist/%{version}/%{name}-%{version}.tar.gz
+Source: http://darkice.googlecode.com/files/%{version}/%{name}-%{version}.tar.gz
 Patch: darkice-0.19-fix-missing-limits_h.diff
-URL: http://darkice.tyrell.hu 
+URL: http://code.google.com/p/darkice/  
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: libalsa-devel libogg-devel libvorbis-devel
 BuildRequires: libjack-devel 
