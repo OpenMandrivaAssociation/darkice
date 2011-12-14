@@ -20,7 +20,7 @@ Source: http://darkice.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch: darkice-0.19-fix-missing-limits_h.diff
 URL: http://code.google.com/p/darkice/  
 BuildRequires: libalsa-devel libogg-devel libvorbis-devel
-BuildRequires: libjack-devel 
+BuildRequires: jackit-devel
 %if %build_plf
 # for some reason, it need the static version to detect liblame
 BuildRequires: liblame-static-devel
