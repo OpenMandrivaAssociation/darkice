@@ -1,0 +1,13 @@
+Index: src/JackDspSource.cpp
+===================================================================
+--- src/JackDspSource.cpp
++++ src/JackDspSource.cpp	2008-07-09 09:56:07.000000000 +0200
+@@ -67,7 +67,7 @@
+ #include "Util.h"
+ #include "Exception.h"
+ #include "JackDspSource.h"
+-
++#include "limits.h"
+ 
+ /* ===================================================  local data structures */
+ 
