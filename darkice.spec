@@ -13,7 +13,7 @@
 Summary : DarkIce live IceCast / ShoutCast streamer
 Name: darkice
 Version: 1.1
-Release: 2
+Release: 3
 License: GPLv3+
 Group: Sound
 Source: http://darkice.googlecode.com/files/%{name}-%{version}.tar.gz
