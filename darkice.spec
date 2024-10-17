@@ -18,7 +18,7 @@ License: GPLv3+
 Group: Sound
 Source: http://darkice.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch: darkice-0.19-fix-missing-limits_h.diff
-URL: http://code.google.com/p/darkice/  
+URL: https://code.google.com/p/darkice/  
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(ogg)
 BuildRequires: pkgconfig(vorbis)
