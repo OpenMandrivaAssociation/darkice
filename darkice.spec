@@ -9,7 +9,7 @@ Url:		http://www.darkice.org/
 # than darkice only.
 Source0:	https://github.com/rafael2k/darkice/archive/refs/tags/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(alsa)
-BuildRequires:	pkgconfig(faac)
+BuildRequires:	pkgconfig(flac)
 BuildRequires:	pkgconfig(jack)
 BuildRequires:	pkgconfig(lame)
 BuildRequires:	pkgconfig(libaacs)
