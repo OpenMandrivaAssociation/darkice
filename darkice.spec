@@ -8,6 +8,11 @@ Url:		http://www.darkice.org/
 # The devel tree really is here: https://github.com/rafael2k/darkice, but it contains much more
 # than darkice only.
 Source0:	https://github.com/rafael2k/darkice/archive/refs/tags/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:	pkgconfig(jack)
