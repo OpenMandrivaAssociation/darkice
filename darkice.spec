@@ -1,6 +1,6 @@
 Summary:	Live IceCast / ShoutCast streamer
 Name:		darkice
-Version:	1.5
+Version:	1.6
 Release:	1
 License:	GPLv3+
 Group:	Sound
@@ -11,9 +11,10 @@ Source0:	https://github.com/rafael2k/darkice/archive/refs/tags/%{name}-%{version
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool-base
-BuildRequires:	slibtool
 BuildRequires:	make
+BuildRequires:	slibtool
 BuildRequires:	pkgconfig(alsa)
+BuildRequires:	pkgconfig(fdk-aac)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:	pkgconfig(jack)
 BuildRequires:	pkgconfig(lame)
@@ -33,8 +34,9 @@ mp3 stream to one or more IceCast and/or ShoutCast servers, the Ogg Vorbis
 stream to one or more IceCast2 servers.
 
 %files
-%license COPYING
-%doc AUTHORS ChangeLog FAQ README TODO
+%license %{name}/trunk/COPYING
+%doc %{name}/trunk/AUTHORS %{name}/trunk/ChangeLog %{name}/trunk/FAQ
+%doc %{name}/trunk/README %{name}/trunk/TODO
 %config(noreplace) %{_sysconfdir}/%{name}.cfg
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
@@ -47,18 +49,21 @@ stream to one or more IceCast2 servers.
 
 
 %build
-# For aacplus we need libaacplus, but it has legal issues:
-# see http://tipok.org.ua/node/17
-%configure \
+pushd %{name}/trunk
+	./autogen.sh
+	%configure \
+		--with-fdkaac \
 		--with-flac \
 	    --with-lame \
 	    --with-opus \
 	    --with-twolame \
-	    --with-vorbis \
-	    --without-aacplus
+	    --with-vorbis
 
-%make_build
+	%make_build
+popd
 
 
 %install
-%make_install
+pushd %{name}/trunk
+	%make_install
+popd
