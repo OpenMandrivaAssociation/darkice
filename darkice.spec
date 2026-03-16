@@ -14,7 +14,8 @@ BuildRequires:	libtool-base
 BuildRequires:	make
 BuildRequires:	slibtool
 BuildRequires:	pkgconfig(alsa)
-BuildRequires:	pkgconfig(fdk-aac)
+# This is in Restricted
+#BuildRequires:	pkgconfig(fdk-aac)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:	pkgconfig(jack)
 BuildRequires:	pkgconfig(lame)
@@ -49,10 +50,11 @@ stream to one or more IceCast2 servers.
 
 
 %build
+# Fdk-aac is in Restricted
 pushd %{name}/trunk
 	./autogen.sh
 	%configure \
-		--with-fdkaac \
+		--without-fdkaac \
 		--with-flac \
 	    --with-lame \
 	    --with-opus \
